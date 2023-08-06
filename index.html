@@ -2,29 +2,83 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="scripts/index.js" defer></script>
     <title>Book Library</title>
   </head>
-  <body>
+  <body id="body">
     <header>
       <h1>Book Library</h1>
     </header>
-    <main>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
+    <main id="main">
+      <div id="card-collection" class="card-collection"></div>
     </main>
+    <div id="modal" class="modal-form">
+      <form id="form" class="book-form">
+        <div id="form-container" class="book-form-container">
+          <span class="close-btn"><i class="fa-solid fa-xmark"></i></span>
+          <h3>Book</h3>
+          <label for="author"> Author</label>
+          <input
+            type="text"
+            name="author"
+            id="author"
+            placeholder=" Author"
+            minlength="3"
+            required
+          />
+          <label for="title"> Title</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            minlength="3"
+            placeholder=" Title"
+            required
+          />
+          <label for="pages"> Pages</label>
+          <input
+            type="text"
+            name="pages"
+            id="pages"
+            minlength="3"
+            placeholder=" Number of pages"
+            pattern="[0-9]+"
+            title="please enter number only"
+            required
+          />
+          <div class="boolean">
+            <p>Have you read this Book?</p>
+            <div class="input-container">
+              <div>
+                <label> Yes</label>
+                <input
+                  type="radio"
+                  id="true"
+                  name="boolean"
+                  value="true"
+                  checked
+                />
+              </div>
+              <div>
+                <label> No</label>
+                <input type="radio" id="false" name="boolean" value="false" />
+              </div>
+            </div>
+          </div>
+
+          <button class="btn submit" type="submit">Save Book</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
